@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-const PORT = 3000;
+const PORT = 3000 || process.env.PORT;
 const app = express();
 
 // Load Routers
@@ -44,7 +44,7 @@ app.use(function (req, res, next) {
 //     console.log(req.cookies);
 //     res.send('ok');
 // })
-app.use(express.static(path.join(__dirname, '../samet/dist/samet/')));
+app.use(express.static(path.join(__dirname, 'samet/')));
 
 app.use(bodyParser.json());
 app.use(StaffRoute);
@@ -61,7 +61,7 @@ app.use(UserRoute);
 
 
 app.get('*', (req,res) => {
-    return res.sendFile(path.join(__dirname, '../samet/dist/samet/index.html'))
+    return res.sendFile(path.join(__dirname, 'samet/index.html'))
 })
 
 app.listen(PORT, () => {
