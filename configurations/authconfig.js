@@ -1,4 +1,4 @@
-const default_password = 'Letmein#123';
+const default_password = 'Welcome@123';
 const jwt_secret = 'sametsecretforjwt';
 const jwt_expires_in = '120 minutes';
 

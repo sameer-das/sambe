@@ -221,7 +221,7 @@ deleteFromDb = async (id) => {
 
 
 read_policies = async () => {
-    console.log('inside readpolicies')
+    // console.log('inside readpolicies')
     const client = await pool.connect();
     let result;
     try {
